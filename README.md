@@ -4,7 +4,6 @@ Anggota kelompok :
 - Muhammad Rezki Ananda (1202190044)
 - Dicky Adriansyah (1202190334)
 - Anindya Prameswari Putri Djakaria (1202194182)
-- Mubeth Praditya (1202190125)
 
 
 ![logo](https://www.mysql.com/common/logos/logo-mysql-170x115.png)

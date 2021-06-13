@@ -161,3 +161,80 @@ CREATE TABLE Laporan_Stok(
     id_sepatu VARCHAR(11) NOT NULL,
     qty INT(11) NOT NULL
 );
+
+-- Alter relation between table
+ALTER TABLE Bahan_Baku
+ADD CONSTRAINT fk_bahanbaku_ppic
+FOREIGN KEY (username_ppic) REFERENCES PPIC(username);
+
+ALTER TABLE Sepatu
+ADD CONSTRAINT fk_sepatu_bahanbaku
+FOREIGN KEY (id_bahan_baku) REFERENCES Bahan_Baku(id_bahan_baku);
+
+ALTER TABLE Sepatu
+ADD CONSTRAINT fk_sepatu_bagiangudang
+FOREIGN KEY (username_staff_gudang) REFERENCES Bagian_Gudang(username);
+
+ALTER TABLE Sales_Order
+ADD CONSTRAINT fk_salesorder_sepatu
+FOREIGN KEY (id_sepatu) REFERENCES Sepatu(id_sepatu);
+
+ALTER TABLE Sales_Order
+ADD CONSTRAINT fk_salesorder_bagiankasir
+FOREIGN KEY (username_kasir) REFERENCES Bagian_Kasir(username);
+
+ALTER TABLE Surat_Jalan
+ADD CONSTRAINT fk_suratjalan_bagiangudang
+FOREIGN KEY (username_staff_gudang) REFERENCES Bagian_Gudang(username);
+
+ALTER TABLE Surat_Jalan
+ADD CONSTRAINT fk_suratjalan_deliveryorder
+FOREIGN KEY (no_do) REFERENCES Delivery_Order(no_do);
+
+ALTER TABLE Surat_Jalan
+ADD CONSTRAINT fk_suratjalan_transport
+FOREIGN KEY (no_transport) REFERENCES Transport(no_transport);
+
+ALTER TABLE Laporan_Penjualan
+ADD CONSTRAINT fk_laporanpenjualan_bagiankeuangan
+FOREIGN KEY (username_staff_keuangan) REFERENCES Bagian_Keuangan(username);
+
+ALTER TABLE Purchase_Order
+ADD CONSTRAINT fk_purchaseorder_supplier
+FOREIGN KEY (id_supplier) REFERENCES Supplier(id_supplier);
+
+ALTER TABLE Purchase_Order
+ADD CONSTRAINT fk_purchaseorder_bahanbaku
+FOREIGN KEY (id_bahan_baku) REFERENCES Bahan_Baku(id_bahan_baku);
+
+ALTER TABLE Purchase_Order
+ADD CONSTRAINT fk_purchaseorder_bagianpembelian
+FOREIGN KEY (username_staff_pembelian) REFERENCES Bagian_Pembelian(username);
+
+ALTER TABLE Delivery_Order
+ADD CONSTRAINT fk_deliveryorder_sepatu
+FOREIGN KEY (id_sepatu) REFERENCES Sepatu(id_sepatu);
+
+ALTER TABLE Delivery_Order
+ADD CONSTRAINT fk_deliveryorder_sales
+FOREIGN KEY (username_staff_sales) REFERENCES Sales(username);
+
+ALTER TABLE Delivery_Order
+ADD CONSTRAINT fk_deliveryorder_warehouse
+FOREIGN KEY (id_warehouse) REFERENCES Warehouse(id_warehouse);
+
+ALTER TABLE Laporan_Pengiriman
+ADD CONSTRAINT fk_laporanpengiriman_managerdcmds
+FOREIGN KEY (username_manager) REFERENCES Manager_DCMDS(username);
+
+ALTER TABLE Laporan_Pengiriman
+ADD CONSTRAINT fk_laporanpengiriman_deliveryorder
+FOREIGN KEY (no_do) REFERENCES Delivery_Order(no_do);
+
+ALTER TABLE Laporan_Stok
+ADD CONSTRAINT fk_laporanstok_spgspb
+FOREIGN KEY (username_spgspb) REFERENCES SPGSPB(username);
+
+ALTER TABLE Laporan_Stok
+ADD CONSTRAINT fk_laporanstok_sepatu
+FOREIGN KEY (id_sepatu) REFERENCES Sepatu(id_sepatu);

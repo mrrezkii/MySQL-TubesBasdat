@@ -13,13 +13,13 @@ CREATE TABLE PPIC(
 CREATE TABLE Bagian_Pembelian(
     username VARCHAR(11) PRIMARY KEY NOT NULL,
     password VARCHAR(11) NOT NULL,
-    nama_pembelian VARCHAR(11) NOT NULL 
+    nama_staff_pembelian VARCHAR(11) NOT NULL 
 );
 
 CREATE TABLE Bagian_Gudang(
     username VARCHAR(11) PRIMARY KEY NOT NULL,
     password VARCHAR(11) NOT NULL,
-    nama_gudang VARCHAR(11) NOT NULL 
+    nama_staff_gudang VARCHAR(11) NOT NULL 
 );
 
 CREATE TABLE SPGSPB(
@@ -37,7 +37,7 @@ CREATE TABLE Sales(
 CREATE TABLE Bagian_Keuangan(
     username VARCHAR(11) PRIMARY KEY NOT NULL,
     password VARCHAR(11) NOT NULL,
-    nama_keuangan VARCHAR(11) NOT NULL 
+    nama_staff_keuangan VARCHAR(11) NOT NULL 
 );
 
 CREATE TABLE Bagian_Kasir(

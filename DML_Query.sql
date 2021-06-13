@@ -122,3 +122,44 @@ VALUES("LS001", "PGPB001", "SE0002", 5),
 ("LS003", "PGPB002", "SE0001", 1),
 ("LS004", "PGPB001", "SE0004", 3),
 ("LS005", "PGPB002", "SE0003", 11);
+
+-- Select all table
+SELECT * FROM PPIC;
+
+SELECT * FROM Bagian_Pembelian;
+
+SELECT * FROM Bagian_Gudang;
+
+SELECT * FROM SPGSPB;
+
+SELECT * FROM Sales;
+
+SELECT * FROM Bagian_Keuangan;
+
+SELECT * FROM Bagian_Kasir;
+
+SELECT * FROM Manager_DCMDS;
+
+SELECT * FROM Bahan_Baku;
+
+SELECT * FROM Supplier;
+
+SELECT * FROM Purchase_Order;
+
+SELECT * FROM Transport;
+
+SELECT * FROM Sepatu;
+
+SELECT * FROM Warehouse;
+
+SELECT * FROM Delivery_Order;
+
+SELECT * FROM Surat_Jalan;
+
+SELECT * FROM Sales_Order;
+
+SELECT * FROM Laporan_Penjualan;
+
+SELECT * FROM Laporan_Pengiriman;
+
+SELECT * FROM Laporan_Stok;

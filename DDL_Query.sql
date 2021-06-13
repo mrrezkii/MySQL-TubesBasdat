@@ -52,31 +52,18 @@ CREATE TABLE Manager_DCMDS(
     nama_manager VARCHAR(11) NOT NULL 
 );
 
-CREATE TABLE Bahan_Baku(
-    id_bahan_baku VARCHAR(11) PRIMARY KEY NOT NULL,
-    nama_bahan_baku VARCHAR(11) NOT NULL,
-    kategori_bahan_baku VARCHAR(25) NOT NULL,
-    jumlah_stok INT(11) NOT NULL,
-);
-
-CREATE TABLE Supplier(
-    id_supplier VARCHAR(11) PRIMARY KEY NOT NULL,
-    nama VARCHAR(25) NOT NULL,
-    alamat TEXT NOT NULL,
-    no_telp INT(13) NOT NULL 
-);
-
 -- Create Actor
 CREATE TABLE Bahan_Baku(
     id_bahan_baku VARCHAR(11) PRIMARY KEY NOT NULL,
     nama_bahan_baku VARCHAR(11) NOT NULL,
     kategori_bahan_baku VARCHAR(25) NOT NULL,
     jumlah_stok INT(11) NOT NULL,
+    username_ppic VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Supplier(
     id_supplier VARCHAR(11) PRIMARY KEY NOT NULL,
-    nama VARCHAR(25) NOT NULL,
+    nama_supplier VARCHAR(25) NOT NULL,
     alamat TEXT NOT NULL,
     no_telp INT(13) NOT NULL 
 );
@@ -91,7 +78,8 @@ CREATE TABLE Purchase_Order(
     unit INT(11) NOT NULL,
     qty INT(11) NOT NULL,
     unit_price INT(11) NOT NULL,
-    total INT(11) NOT NULL,
+    total_harga INT(11) NOT NULL,
+    username_staff_pembelian VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Transport(
@@ -110,33 +98,36 @@ CREATE TABLE Sepatu(
     gender VARCHAR(11) NOT NULL,
     jenis_sepatu VARCHAR(11) NOT NULL,
     qty INT(11) NOT NULL,
+    username_staff_gudang VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Warehouse(
     id_warehouse VARCHAR(11) PRIMARY KEY NOT NULL,
     nama_owner VARCHAR(25) NOT NULL,
     lokasi VARCHAR(25) NOT NULL,
-    jenis_cabang VARCHAR(25) NOT NULL,
+    jenis_cabang VARCHAR(25) NOT NULL
 );
 
 CREATE TABLE Delivery_Order(
     no_do VARCHAR(11) PRIMARY KEY NOT NULL,
     id_sepatu VARCHAR(11) NOT NULL,
     id_warehouse VARCHAR(11) NOT NULL,
-    staf_sales VARCHAR(11) NOT NULL,
     tanggal_surat DATE NOT NULL,
     nama_sepatu VARCHAR(24) NOT NULL,
     warna_sepatu VARCHAR(11) NOT NULL,
     ukuran INT(2) NOT NULL,
     total_qty INT(11) NOT NULL,
     harga INT(11) NOT NULL,
+    username_staff_sales VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Surat_Jalan(
     no_surat_jalan VARCHAR(11) PRIMARY KEY NOT NULL,
-    nama_owner VARCHAR(25) NOT NULL,
-    lokasi VARCHAR(25) NOT NULL,
-    jenis_cabang VARCHAR(25) NOT NULL,
+    no_do VARCHAR(11) NOT NULL,
+    no_transport VARCHAR(11) NOT NULL,
+    nama_pemilik VARCHAR(25) NOT NULL,
+    nama_counter VARCHAR(25) NOT NULL,
+    username_staff_gudang VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Sales_Order(
@@ -145,6 +136,7 @@ CREATE TABLE Sales_Order(
     qty INT(11) NOT NULL,
     harga INT(11) NOT NULL,
     total_harga INT(11) NOT NULL,
+    username_kasir VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Laporan_Penjualan(
@@ -152,6 +144,7 @@ CREATE TABLE Laporan_Penjualan(
     id_sales_order VARCHAR(11) NOT NULL,
     lokasi VARCHAR(25) NOT NULL,
     jenis_cabang VARCHAR(25) NOT NULL,
+    username_staff_keuangan VARCHAR(11) NOT NULL
 );
 
 CREATE TABLE Laporan_Pengiriman(
@@ -159,4 +152,12 @@ CREATE TABLE Laporan_Pengiriman(
     no_do VARCHAR(11) NOT NULL,
     lokasi VARCHAR(25) NOT NULL,
     jenis_cabang VARCHAR(25) NOT NULL,
+    username_manager VARCHAR(11) NOT NULL
+);
+
+CREATE TABLE Laporan_Stok(
+    id_laporan_stok VARCHAR(11) PRIMARY KEY NOT NULL,
+    username_spgspb VARCHAR(11) NOT NULL,
+    id_sepatu VARCHAR(11) NOT NULL,
+    qty INT(11) NOT NULL
 );

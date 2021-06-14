@@ -145,3 +145,8 @@ VALUES("LP0010", "SO001", "Papar", "Counter", "UANG001");
 SELECT lp.id_laporan_pengiriman, lp.no_do, lp.lokasi, lp.jenis_cabang, manager.nama_manager
 FROM Laporan_Pengiriman lp JOIN Manager_DCMDS manager
 on lp.username_manager = manager.username;
+
+-- Sales - Mengecek Stok Sepatu
+SELECT sp.id_sepatu, bb.nama_bahan_baku, sp.nama_sepatu, sp.ukuran, sp.warna, sp.gender, sp.jenis_sepatu, sp.qty
+FROM Sepatu sp JOIN Bahan_Baku bb
+ON sp.id_bahan_baku = bb.id_bahan_baku;

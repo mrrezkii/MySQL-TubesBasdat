@@ -150,3 +150,19 @@ on lp.username_manager = manager.username;
 SELECT sp.id_sepatu, bb.nama_bahan_baku, sp.nama_sepatu, sp.ukuran, sp.warna, sp.gender, sp.jenis_sepatu, sp.qty
 FROM Sepatu sp JOIN Bahan_Baku bb
 ON sp.id_bahan_baku = bb.id_bahan_baku;
+
+-- Sales - Membuat Delivery Order
+INSERT INTO Delivery_Order
+VALUES("DO001", "SE0001", "WH001", "2021-06-23", "Sepatu A", "Putih", 40, 100, 200000, "SALE001");
+
+SELECT do.no_do, sp.nama_sepatu, wr.nama_owner, do.tanggal_surat, sp.warna, sp.ukuran, do.harga, sales.nama_sales
+FROM Delivery_Order do
+JOIN Sepatu sp ON do.id_sepatu = sp.id_sepatu
+JOIN Warehouse wr ON do.id_warehouse = wr.id_warehouse
+JOIN Sales sales ON do.username_staff_sales = sales.username;
+
+UPDATE Delivery_Order
+SET tanggal_surat = "2021-04-21"
+WHERE no_do = "DO001";
+
+DELETE FROM Delivery_Order WHERE no_do = "DO001";

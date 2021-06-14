@@ -122,3 +122,17 @@ SET qty = 23
 WHERE id_laporan_stok = "LS002";
 
 DELETE FROM Laporan_Stok WHERE id_laporan_stok = "LP008";
+
+-- Bagian Pembelian - Purchase Order
+INSERT INTO Purchase_Order
+VALUES("PO00010", "AD123", "BB0001", "2021-01-02", "Suede", "Hitam", 2, 5, 200000, 600000, "PEMB001");
+
+SELECT pp.id_purchase_order, pp.id_supplier, pp.id_bahan_baku, pp.tanggal_surat, pp.material_desctiption, pp.warna, pp.unit, pp.qty, pp.unit_price, pp.total_harga, pem.nama_staff_pembelian
+FROM Purchase_Order pp JOIN Bagian_Pembelian pem
+ON pp.username_staff_pembelian = pem.username;
+
+UPDATE Purchase_Order
+SET warna = "Tosca"
+WHERE id_purchase_order = "PO00010";
+
+DELETE FROM Purchase_Order WHERE id_purchase_order = "PO00010";

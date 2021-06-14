@@ -216,8 +216,8 @@ WHERE id_purchase_order = "PO0010";
 DELETE FROM Purchase_Order WHERE id_purchase_order = "PO0010";
 
 -- Manager DCMDS - Laporan Pengiriman
-INSERT INTO Laporan_Penjualan
-VALUES("LP0010", "SO001", "Papar", "Counter", "UANG001");
+INSERT INTO Laporan_Pengiriman
+VALUES("LPI0010", "DO001", "Ngadiluwih", "Counter", "MANA002");
 
 -- Manager DCMDS - History Pengiriman
 SELECT lp.id_laporan_pengiriman, lp.no_do, lp.lokasi, lp.jenis_cabang, manager.nama_manager

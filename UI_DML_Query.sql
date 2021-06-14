@@ -94,6 +94,21 @@ WHERE id_laporan_penjualan = "LP001";
 DELETE FROM Laporan_Penjualan WHERE id_laporan_penjualan = "LP008";
 
 -- Bagian Kasir - Membuat Sales Order
+
+INSERT INTO Sales_Order
+VALUES("SO001", "SE0001", 12, 30000, 600000, "KASI001");
+
+SELECT so.id_sales_order, so.id_sepatu, so.qty, so.harga, so.total_harga, kasir.nama_kasir
+FROM Sales_Order so JOIN Bagian_Kasir kasir
+ON so.username_kasir = kasir.username;
+
+UPDATE Sales_Order
+SET qty = 20
+WHERE id_sales_order = "SO001";
+
+DELETE FROM Sales_Order WHERE id_sales_order = "LP008";
+
+-- Bagian SPG/SPB - Laporan Stok Harian
 INSERT INTO Laporan_Stok
 VALUES("LS00100", "PGPB001", "SE0002", 5);
 

@@ -48,3 +48,15 @@ WHERE username = "KASI001";
 
 SELECT nama_manager FROM Manager_DCMDS
 WHERE username = "DCMD001";
+
+-- PPIC - Laporan bahan baku
+INSERT INTO Bahan_Baku
+VALUES("BB00011", "Super", "Bahan Baku Belum Jadi", 1000, "PPIC001");
+
+SELECT bb.id_bahan_baku, bb.nama_bahan_baku, bb.kategori_bahan_baku, bb.jumlah_stok, PPIC.nama_ppic
+FROM Bahan_Baku bb JOIN PPIC
+ON bb.username_ppic = PPIC.username;
+
+UPDATE Bahan_Baku
+SET nama_bahan_baku = "Mantapp", kategori_bahan_baku = "Bahan Baku Belum Jadi", jumlah_stok = 100
+WHERE id_bahan_baku = "BB0001";

@@ -7,7 +7,7 @@ Anggota kelompok :
 <br>
 
 ## Skema Basis Data
-![](https://raw.githubusercontent.com/newbiexpert/MySQL-TubesBasdat/main/Files/0.%20MySQL%20Designer.png)
+![](https://raw.githubusercontent.com/newbiexpert/MySQL-TubesBasdat/main/Files/MySQL%20Designer.png)
 <br>
 
 ### What is MySQL?

@@ -136,3 +136,12 @@ SET warna = "Tosca"
 WHERE id_purchase_order = "PO00010";
 
 DELETE FROM Purchase_Order WHERE id_purchase_order = "PO00010";
+
+-- Manager DCMDS - Laporan Pengiriman
+INSERT INTO Laporan_Penjualan
+VALUES("LP0010", "SO001", "Papar", "Counter", "UANG001");
+
+-- Manager DCMDS - History Pengiriman
+SELECT lp.id_laporan_pengiriman, lp.no_do, lp.lokasi, lp.jenis_cabang, manager.nama_manager
+FROM Laporan_Pengiriman lp JOIN Manager_DCMDS manager
+on lp.username_manager = manager.username;

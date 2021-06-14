@@ -24,7 +24,6 @@ SELECT username, password FROM Manager_DCMDS
 WHERE username = "DCMD001";
 
 -- Get name
-
 SELECT nama_ppic FROM PPIC
 WHERE username = "PPIC001";
 
@@ -69,3 +68,11 @@ ON pp.username_staff_pembelian = pem.username;
 UPDATE Purchase_Order
 SET qty = 10
 WHERE id_purchase_order = "PO0001";
+
+INSERT INTO Surat_Jalan
+VALUES("SU006", "DO001", "TR0004", "Abdul", "Matahari Kediri", "GUDA001");
+
+-- Bagian Gudang - Membuat Surat Jalan
+SELECT sj.no_surat_jalan, sj.no_do, sj.no_transport, sj.nama_pemilik, sj.nama_counter, gud.nama_staff_gudang
+FROM Surat_Jalan sj JOIN Bagian_Gudang gud
+ON sj.username_staff_gudang = gud.username;

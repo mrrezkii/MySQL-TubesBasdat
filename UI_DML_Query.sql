@@ -92,3 +92,18 @@ SET lokasi = "Kediri", jenis_cabang = "Counterr"
 WHERE id_laporan_penjualan = "LP001";
 
 DELETE FROM Laporan_Penjualan WHERE id_laporan_penjualan = "LP008";
+
+-- Bagian Kasir - Membuat Sales Order
+INSERT INTO Laporan_Stok
+VALUES("LS00100", "PGPB001", "SE0002", 5);
+
+SELECT ls.id_laporan_stok, pgpb.nama_spgspb, sp.nama_sepatu, ls.qty
+FROM Laporan_Stok ls 
+JOIN SPGSPB pgpb on ls.username_spgspb = pgpb.username
+JOIN Sepatu sp ON ls.id_sepatu = sp.id_sepatu;
+ 
+UPDATE Laporan_Stok
+SET qty = 23
+WHERE id_laporan_stok = "LS002";
+
+DELETE FROM Laporan_Stok WHERE id_laporan_stok = "LP008";

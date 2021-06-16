@@ -21,7 +21,7 @@ SELECT * FROM Bagian_Kasir
 WHERE username = "KASI001" and password = "123abc123";
 
 SELECT *FROM Manager_DCMDS
-WHERE username = "DCMD001" and password = "123abc123";
+WHERE username = "MANA001" and password = "123abc123";
 
 -- Get name
 SELECT nama_ppic FROM PPIC
